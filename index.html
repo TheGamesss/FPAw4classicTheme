@@ -1,4 +1,5 @@
-<style>@font-face {
+<style>
+    @font-face {
         font-family: FancyFont;
         src: url(https://thegamesss.github.io/FPAw4classicTheme/FancyFont.ttf);
     }
@@ -17,33 +18,56 @@
         background-repeat: no-repeat;
         background-size: 100% 2px;
     }
-    .btn {
-        transition: background 0.4s ease-in-out;
+    #btn {
+        transition: height 0.4s ease-in-out;
         max-width: 700px;
+  		height: 35px;
     }
-    .btn:hover {
-        cursor: pointer;
-        background: linear-gradient(to right, transparent 0%, #04AA6D 40%, #04AA6D 60%, transparent 100%);
+  	#btn:hover {
+  		height: 62px;
+  	}
+  	#btn2:hover {
+  		cursor: pointer;
+  	}
+    #btn:hover #btn2 {
+  		animation: fadein ease-in-out 0.4s;
+  		animation-fill-mode: forwards;
+  		animation-delay: 0.3s;
     }
+  	@keyframes fadein {
+  		from { opacity: 0; }
+    	to { opacity: 1; }
+  	}
+  	#btn:not(:hover) #btn2 {
+  		animation: fadeout ease-in-out 0.2s;
+  		animation-fill-mode: forwards;
+    }
+  	@keyframes fadeout {
+  		from { opacity: 1; }
+    	to { opacity: 0; }
+  	}
 </style>
 <body>
 <center>
     <img src="https://thegamesss.github.io/FPAw4classicTheme/logo.svg" style="margin:30px;max-width:300px;"/>
     <br>
-    <div class="btn" onclick="window.location.href = 'https://thegamesss.github.io/FPAw4classicTheme/FPAWorld4p1.swf';">
+    <div id="btn">
     <hr class="line">
-    <font size="5px">Part #1</font>
-    <hr class="line">
+    <font size="5px">Part #1</font><br>
+    <button id="btn2" onclick="window.location.href = 'https://thegamesss.github.io/FPAw4classicTheme/FPAWorld4p1.swf';" style="opacity:0">Download</button>
     </div>
-    <div class="btn" onclick="window.location.href = 'https://thegamesss.github.io/FPAw4classicTheme/FPAWorld4p2.swf';">
     <hr class="line">
-    <font size="5px">Part #2</font>
+    <div id="btn">
     <hr class="line">
+    <font size="5px">Part #2</font><br>
+    <button id="btn2" onclick="window.location.href = 'https://thegamesss.github.io/FPAw4classicTheme/FPAWorld4p2.swf';" style="opacity:0">Download</button>
     </div>
-    <div class="btn" onclick="window.location.href = 'https://thegamesss.github.io/FPAw4classicTheme/FPAWorld4p3.swf';">
     <hr class="line">
-    <font size="5px">Part #3</font>
+    <div id="btn">
     <hr class="line">
+    <font size="5px">Part #3</font><br>
+    <button id="btn2" onclick="window.location.href = 'https://thegamesss.github.io/FPAw4classicTheme/FPAWorld4p3.swf';" style="opacity:0">Download</button>
     </div>
+    <hr class="line">
 </center>
 </body>
